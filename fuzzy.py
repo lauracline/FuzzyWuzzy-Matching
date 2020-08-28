@@ -6,7 +6,7 @@ import time
 from fuzzywuzzy import fuzz
 
 #set directory
-os.chdir('C:\\Users\\sawasthi\\Downloads')
+os.chdir('C:\\Users\\YourFolder')
 
 #created fictional dataset that resembles the original dataset 
 d = {'Customer Name': ['ED SMITH','EDWARD SMITH','JOE DOE','PAT MUELLER','PATRICK MUELLER','LISA DANE', 
