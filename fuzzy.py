@@ -133,6 +133,7 @@ for index,row in df.iterrows():
     else:
         testdict[row[1]].append([row[0].split(' ')[0].lower(),row[0],row[2]])       
 
+		
 #run nickname matching
 final=[]
 discarded=[]
@@ -145,10 +146,7 @@ for key,val in testdict.items():
 newdf=pd.DataFrame(final, columns=['NAME', 'KEY', 'CUST_MSTR_ID'])
 dropped=pd.DataFrame(discarded, columns=['NAME', 'KEY', 'CUST_MSTR_ID'])
 
-print("My program took", time.time() - start_time, "to run") 
 
-#create dict from filtered data for fuzzy matching
-start_time = time.time() 
 
 fuzzydict={}
 for index,row in newdf.iterrows():
@@ -156,7 +154,8 @@ for index,row in newdf.iterrows():
         fuzzydict[row[1]]=[[row[0],row[2]]]
     else:
         fuzzydict[row[1]].append([row[0],row[2]])
-    
+
+		
 #run fuzzy matching
 fuzzyfinal=[]
 fuzzydiscard=[]
